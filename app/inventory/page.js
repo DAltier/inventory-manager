@@ -11,7 +11,8 @@ import {
   ListItem,
   IconButton,
 } from '@mui/material';
-import { styled } from '@mui/system';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import { db, auth } from '../../firebase';
 import {
   collection,
@@ -21,11 +22,9 @@ import {
   doc,
   updateDoc,
 } from 'firebase/firestore';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import { onAuthStateChanged } from 'firebase/auth';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { onAuthStateChanged } from 'firebase/auth';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 
@@ -123,7 +122,7 @@ const InventoryPage = () => {
     }
   };
 
-  const handleFetchRecipes = async () => {
+  const handleFetchRecipe = async () => {
     setRecipeLoading(true);
     setRecipesFetched(false);
     try {
@@ -181,7 +180,7 @@ const InventoryPage = () => {
               </Button>
               <Button
                 variant="contained"
-                onClick={handleFetchRecipes}
+                onClick={handleFetchRecipe}
                 disabled={recipeLoading}
                 sx={{ backgroundColor: '#95989c', fontSize: 20 }}
               >
