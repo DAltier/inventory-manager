@@ -34,14 +34,6 @@ const LandingPage = () => {
           available items.
         </Typography>
         <ButtonContainer>
-          <Link href="/inventory" passHref>
-            <Button
-              variant="contained"
-              sx={{ marginRight: 2, backgroundColor: '#95989c', fontSize: 20 }}
-            >
-              Manage Inventory
-            </Button>
-          </Link>
           <Link href="/register" passHref>
             <Button
               variant="contained"
