@@ -36,6 +36,7 @@ const Register = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       console.log('Registration successful');
+      await signOut(auth);
       router.push('/login');
     } catch (error) {
       console.error('Error registering:', error.message);

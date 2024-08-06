@@ -50,7 +50,6 @@ const InventoryPage = () => {
         fetchInventoryItems(currentUser.uid);
       }
     });
-
     return () => unsubscribe();
   }, [router]);
 
